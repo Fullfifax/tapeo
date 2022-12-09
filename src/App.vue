@@ -1,27 +1,38 @@
 <template>
   <h1>Tapeo :)</h1>
   <button class="btn-start" :disabled="isPlaying" @click="start">Alefa ;)</button>
-  <Block v-if="isPlaying" :delay="delay" />
+  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
+  <p v-if="showResults">Reaction time: {{ score }} ms</p>
 </template>
 
 <script>
 import Block from './components/BlockTape.vue';
+import ResultsTime from './components/ResultsTime.vue';
 
 export default {
   name: 'App',
   data() {
     return {
       isPlaying: false,
-      delay: null
+      delay: null,
+      score: null,
+      showResults: false
     }
   },
   components: {
-    Block
-  },
+    Block,
+    ResultsTime
+},
   methods: {
     start() {
       this.delay = 2000 + Math.random() * 5000
       this.isPlaying = true
+      this.showResults = false
+    },
+    endGame(reactionTime) {
+      this.score = reactionTime
+      this.isPlaying = false
+      this.showResults = true
     }
   }
 }
