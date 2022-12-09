@@ -1,10 +1,30 @@
 <template>
   <h1>Tapeo :)</h1>
+  <button class="btn-start" :disabled="isPlaying" @click="start">Alefa ;)</button>
+  <Block v-if="isPlaying" :delay="delay" />
 </template>
 
 <script>
+import Block from './components/BlockTape.vue';
+
 export default {
   name: 'App',
+  data() {
+    return {
+      isPlaying: false,
+      delay: null
+    }
+  },
+  components: {
+    Block
+  },
+  methods: {
+    start() {
+      this.delay = 2000 + Math.random() * 5000
+      this.isPlaying = true
+      console.log(this.delay)
+    }
+  }
 }
 </script>
 
@@ -14,7 +34,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1565b6;
   margin-top: 60px;
+}
+
+.btn-start {
+  background-color: rgb(120, 219, 120);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2em;
+  padding: 12px 20px;
+}
+
+.btn-start:disabled {
+  opacity: 0.5;
 }
 </style>
