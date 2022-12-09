@@ -42,6 +42,7 @@ export default {
     background-color: #1565b6;
     border-radius : 50%;
     color: white;
+    cursor: pointer;
     font-size: 2em;
     margin: 40px auto;
     padding: 100px 0;

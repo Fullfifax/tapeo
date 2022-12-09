@@ -2,7 +2,7 @@
   <h1>Tapeo :)</h1>
   <button class="btn-start" :disabled="isPlaying" @click="start">Alefa ;)</button>
   <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-  <p v-if="showResults">Reaction time: {{ score }} ms</p>
+  <ResultsTime v-if="showResults" :score="score" />
 </template>
 
 <script>
@@ -53,11 +53,13 @@ export default {
   border: none;
   border-radius: 20px;
   color: white;
+  cursor: pointer;
   font-size: 1.2em;
   padding: 12px 20px;
 }
 
 .btn-start:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }
 </style>
