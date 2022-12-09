@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import '../src/assets/css/global.css';
 import Block from './components/BlockTape.vue';
 import ResultsTime from './components/ResultsTime.vue';
 
@@ -44,7 +45,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #1565b6;
+  color: white;
   margin-top: 60px;
 }
 

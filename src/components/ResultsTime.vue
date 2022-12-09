@@ -27,9 +27,9 @@ export default {
 
 <style>
 .reaction {
-    background-color: #1565b6;
+    background-color: white;
     border-radius: 12px;
-    color: white;
+    color: #1565b6;
     margin: 20px auto;
     padding: 12px 16px;
     text-align: center;

@@ -39,9 +39,9 @@ export default {
 
 <style>
 .block {
-    background-color: #1565b6;
+    background-color: white;
     border-radius : 50%;
-    color: white;
+    color: #1565b6;
     cursor: pointer;
     font-size: 2em;
     margin: 40px auto;
